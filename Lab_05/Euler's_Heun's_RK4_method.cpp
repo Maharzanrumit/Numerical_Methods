@@ -20,7 +20,7 @@ void Rk4(float h,float x,float y,float xn){
 	        m4=fun(x+h,y+(m3*(h/2)));
 	        y=y+(m1+(2*m2)+(2*m3)+m4)*(h/6);
 	        cout<<"Itr :"<<i++<<endl;
-	        cout<<"y("<<x<<") : "<<setprecision(3)<<y;
+	        cout<<"y("<<x+h<<") : "<<setprecision(3)<<y;
 	        cout<<endl;
 	        x +=h;
     }
@@ -32,7 +32,7 @@ void Euler(float h, float x, float y,float xn){
 	while(x !=xn){
 		y=y+(h*fun(x,y));
 		cout<<"Itr :"<<i++<<endl;
-	        cout<<"y("<<x<<") : "<<setprecision(3)<<y;
+	        cout<<"y("<<x+h<<") : "<<setprecision(3)<<y;
 	        cout<<endl;
 		x+=h;
 	}
@@ -47,7 +47,7 @@ void Heun(float h, float x, float y, float xn){
 		m2=fun(x+h,y+(m1*h));
 		y=y+((m1+m2)*(h/2.0));
 		cout<<"Itr :"<<i++<<endl;
-		cout<<"y("<<x<<") : "<<setprecision(3)<<y;
+		cout<<"y("<<x+h<<") : "<<setprecision(3)<<y;
         cout<<endl;
 		x+=h;
 	}
