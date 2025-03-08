@@ -38,10 +38,10 @@ void Euler(float h, float x, float y,float xn){
 	}
 }
 
-void Hune(float h, float x, float y, float xn){
+void Heun(float h, float x, float y, float xn){
 	float m1,m2 ;
 	int i=0;
-	cout<<"\n\nHunes Method\n";
+	cout<<"\n\nHeuns Method\n";
 	while(x !=xn){
 		m1=fun(x,y);
 		m2=fun(x+h,y+(m1*h));
@@ -63,7 +63,7 @@ int main() {
     cin>>xn;
     
     Euler(h,x,y,xn);
-    Hune(h,x,y,xn);
+    Heun(h,x,y,xn);
     Rk4(h,x,y,xn);
     
     return 0;
