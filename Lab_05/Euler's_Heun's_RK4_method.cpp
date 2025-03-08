@@ -10,7 +10,7 @@ float fun(float a, float b){
 }
 void Rk4(float h,float x,float y,float xn){
      float m1,m2,m3,m4;
-     int i=0;
+     int i=1;
     
     cout<<"\n\nRunge Kutta Method\n";
     while(x !=xn){
@@ -40,7 +40,7 @@ void Euler(float h, float x, float y,float xn){
 
 void Heun(float h, float x, float y, float xn){
 	float m1,m2 ;
-	int i=0;
+	int i=1;
 	cout<<"\n\nHeuns Method\n";
 	while(x !=xn){
 		m1=fun(x,y);
