@@ -2,6 +2,7 @@
 #include<cmath>
 #include<iomanip>
 using namespace std;
+
 float fun(float a, float b){
     float result1=0;
     result1=a+b;
@@ -13,15 +14,15 @@ void Rk4(float h,float x,float y,float xn){
     
     cout<<"\n\nRunge Kutta Method\n";
     while(x !=xn){
-        m1=fun(x,y);
-        m2=fun(x+(h/2),y+(m1*(h/2)));
-        m3=fun(x+(h/2),y+(m2*(h/2)));
-        m4=fun(x+h,y+(m3*(h/2)));
-        y=y+(m1+(2*m2)+(2*m3)+m4)*(h/6);
-        cout<<"Itr :"<<i++<<endl;
-        cout<<"y("<<x<<") : "<<setprecision(3)<<y;
-        cout<<endl;
-        x +=h;
+	        m1=fun(x,y);
+	        m2=fun(x+(h/2),y+(m1*(h/2)));
+	        m3=fun(x+(h/2),y+(m2*(h/2)));
+	        m4=fun(x+h,y+(m3*(h/2)));
+	        y=y+(m1+(2*m2)+(2*m3)+m4)*(h/6);
+	        cout<<"Itr :"<<i++<<endl;
+	        cout<<"y("<<x<<") : "<<setprecision(3)<<y;
+	        cout<<endl;
+	        x +=h;
     }
 }
 
@@ -31,8 +32,8 @@ void Euler(float h, float x, float y,float xn){
 	while(x !=xn){
 		y=y+(h*fun(x,y));
 		cout<<"Itr :"<<i++<<endl;
-        cout<<"y("<<x<<") : "<<setprecision(3)<<y;
-        cout<<endl;
+	        cout<<"y("<<x<<") : "<<setprecision(3)<<y;
+	        cout<<endl;
 		x+=h;
 	}
 }
@@ -51,8 +52,6 @@ void Hune(float h, float x, float y, float xn){
 		x+=h;
 	}
 }
-
-
 int main() {
     float h,x,y,xn;
    
@@ -66,7 +65,6 @@ int main() {
     Euler(h,x,y,xn);
     Hune(h,x,y,xn);
     Rk4(h,x,y,xn);
-    
     
     return 0;
 }
